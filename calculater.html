@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .a{
+        width: 100%;
+    }
+    .container{
+        
+    }
+    span{
+        padding-top: 10PX;
+    }
+    
+    button{
+        width: 40px;
+        height: 40px;
+        border-radius: 50PX;
+        background-color: rgb(200, 214, 231);
+    }
+    button:hover{
+        background-color: rgb(255, 255, 255);
+    }
+</style>
+
+</head>
+<body>
+   <div class="container py-5 bg-dark">
+    <h1 class="bg-info text-center py-2 rounded">   Calculater </h1>
+    <div class="a">
+       <div class="container d-flex justify-content-between align-items-center">
+        <input type="text" class="form-control" id="text">
+       </div>
+       <div class="container d-flex justify-content-between align-items-center">
+        <span><button type="button" value="" id="btn" onclick="cllr()"> C </button></span>
+       <span><button type="button" value="" id="btn" onclick="pick('/')"> / </button></span>
+       <span><button type="button" value="" id="btn" onclick="pick('*')"> * </button></span>
+       <span><button type="button" value="" id="btn" onclick="pick('+')"> + </button></span>
+       </div>
+       <div class="container d-flex justify-content-between align-items-center">
+        <span><button type="button" value="7" id="btn" onclick="pick(7)"> 7 </button></span>
+       <span><button type="button" value="8" id="btn" onclick="pick(8)"> 8 </button></span>
+       <span><button type="button" value="9" id="btn" onclick="pick(9)"> 9 </button></span>
+       <span><button type="button" value="" id="btn" onclick="pick('-')"> - </button></span>
+       </div>
+       <div class="container d-flex justify-content-between align-items-center">
+        <span><button type="button" value="4" id="btn" onclick="pick(4)"> 4 </button></span>
+       <span><button type="button" value="5" id="btn" onclick="pick(5)"> 5 </button></span>
+       <span><button type="button" value="6" id="btn" onclick="pick(6)"> 6 </button></span>
+       <span><button type="button" value="." id="btn" onclick="pick('.')"> . </button></span>
+       </div>
+       <div class="container d-flex justify-content-between align-items-center">
+        <span><button type="button" value="1" id="btn" onclick="pick(1)"> 1 </button></span>
+       <span><button type="button" value="2" id="btn" onclick="pick(2)"> 2 </button></span>
+       <span><button type="button" value="3" id="btn" onclick="pick(3)"> 3 </button></span>
+       <span><button type="button" value="" id="btn" onclick="solve()"> = </button></span>
+       </div>
+       <div class="container d-flex justify-content-between align-items-center">
+        <span><button type="button" value="00" id="btn" onclick="pick('00')"> 00 </button></span>
+       <span><button type="button" value="0" id="btn" onclick="pick(0)"> 0 </button></span>
+       <span><button type="button" value="">  </button></span>
+       <span><button type="button" value="">  </button></span>
+       </div>
+    </div>
+   </div>
+
+   <script>
+   // let input = document.getElementById("text");
+   // let buttons = document.getElementById("text");
+
+
+    let string = "  " ;
+
+
+    function pick(val){
+        document.getElementById("text").value += val ;
+    }
+
+    function solve(){
+       let x = document.getElementById("text").value;
+       let y = eval(x);
+       document.getElementById("text").value = y ;
+    }
+
+    function cllr(){
+        document.getElementById("text").value = "  " ;
+    }
+   </script>
+</body>
+</html>
